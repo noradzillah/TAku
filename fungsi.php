@@ -536,7 +536,7 @@ function showTabelPerbandingan($jenis,$kriteria) {
 	} else {
 		$n = getJumlahAlternatif();
 	}
-
+//memanggil data dari database
 	$query = "SELECT nim FROM $kriteria ORDER BY id_alt";
 	$result	= mysqli_query($koneksi, $query);
 	if (!$result) {
@@ -556,7 +556,7 @@ function showTabelPerbandingan($jenis,$kriteria) {
 	<table class="table table-stripped">
 		<thead class="thead-dark">
 			<tr>
-				<th colspan="2">Tentukan</th>
+				<th colspan="2">Tentukan Prioritas</th>
 				<th>Poin Perbandingan</th>
 			</tr>
 		</thead>
@@ -564,7 +564,7 @@ function showTabelPerbandingan($jenis,$kriteria) {
 
 	<?php
 
-	//inisialisasi
+	//inisialisasi dg perulangan
 	$urut = 0;
 
 	for ($x=0; $x <= ($n - 2); $x++) {

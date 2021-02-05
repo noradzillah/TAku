@@ -29,7 +29,7 @@
 
 <section class="content">
 	<h3>KRITERIA</h3>
-	<?php if (isset($_SESSION['login'])): ?>
+	<?php if($_SESSION['data']['role']==2):   ?>
 	<a href="tambah.php?jenis=kriteria" class="btn btn-sm btn-info float-right" style="margin-bottom: 15px">
 		<i class="fa fa-plus-square"></i> Tambah Kriteria
 	</a>
@@ -58,7 +58,7 @@
 				<td><?php echo $i ?></td>
 				<td><?php echo $row['nama_krit'] ?></td>
 				<td>
-					<?php if (isset($_SESSION['login'])): ?>
+				<?php if($_SESSION['data']['role']==2):   ?>
 						<form method="post" action="kriteria.php">
 							<input type="hidden" name="id" value="<?php echo $row['id_krit'] ?>">
 							<button type="submit" name="edit" class="btn btn-sm btn-warning"><i class="fa fa-pencil-square-o"></i>EDIT</button>

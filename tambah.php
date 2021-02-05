@@ -29,7 +29,7 @@
 
 	<form class="col-md-12" method="post" action="tambah.php">
 		<div class="form-group">
-			<label>NIM Mahasiswa</label>
+			<label> Nama <?php echo $jenis?></label>
 			<input type="text" name="nama" class="form-control">
 			<input type="hidden" name="jenis" value="<?php echo $jenis?>">
 		</div>

@@ -87,12 +87,12 @@
 		</tbody>
 		<tfoot>
 			<tr>
-				<th colspan="<?php echo ($n+2)?>">Principe Eigen Vector (λ maks)</th>
-				<th><?php echo (round($eigenvektor,5))?></th>
+				<th colspan="<?php echo ($n+2)?>">λ maks</th>
+				<th><?php echo (round($eigenvektor,4))?></th>
 			</tr>
 			<tr>
 				<th colspan="<?php echo ($n+2)?>">Consistency Index</th>
-				<th><?php echo (round($consIndex,5))?></th>
+				<th><?php echo (round($consIndex,4))?></th>
 			</tr>
 			<tr>
 				<th colspan="<?php echo ($n+2)?>">Consistency Ratio</th>
@@ -121,10 +121,11 @@
 ?>
 
 <br>
-
+<?php if($_SESSION['data']['role']==3):   ?>
 <a class="btn btn-outline-info" style="float: right; margin-bottom: 5%" href="hasil.php">
 	Lanjut  <i class="fa fa-angle-right"></i>
 </a>
+<?php endif; ?>
 
 
 <?php
@@ -132,10 +133,11 @@
 		} else {
 
 ?>
-
+	<?php if($_SESSION['data']['role']==3):   ?>
 	<a class="btn btn-outline-info" style="float: right; margin-bottom: 5%" href="<?php echo "bobot.php?c=".($jenis + 1)?>">
 		Lanjut  <i class="fa fa-angle-right"></i>
 	</a>
+	<?php endif; ?>
 
 <?php
 

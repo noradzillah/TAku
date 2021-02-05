@@ -6,7 +6,7 @@ include('header.php');
 ?>
 <html>
 <body >
-<h3>Tabel Ranking</h3>
+<br>
 	<div class="table-responsive">
 		<table class="table table-stripped">
 			<thead class="thead-dark">

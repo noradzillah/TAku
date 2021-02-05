@@ -27,11 +27,11 @@
 
 <section class="content">
 	<h3>ALTERNATIF</h3>
-	<?php if (isset($_SESSION['login'])): ?>
+	<?php if($_SESSION['data']['role']==1):   ?>
 	<a href="tambah.php?jenis=alternatif" class="btn btn-sm btn-info float-right" style="margin-bottom: 15px">
 		<i class="fa fa-plus-square"></i> Tambah Alternatif
 	</a>
-	<?php endif; ?>
+	<?php endif;?>
 
 	<table class="ui celled table" id="table_id">
 		<thead class="thead-dark">
@@ -42,7 +42,7 @@
 				<th>IPK</th>
 				<th>Organisasi</th>
 				<th>Semester</th>
-				<?php if (isset($_SESSION['login'])): ?>
+				<?php if($_SESSION['data']['role']==1):   ?>
 				<th>Aksi</th>
 				<?php endif; ?>
 			</tr>
@@ -86,7 +86,7 @@
 						?></td>
 				<?php }
 			?>
-			<?php if (isset($_SESSION['login'])): ?>
+			<?php if($_SESSION['data']['role']==1):   ?>
 			<td>
 				<form method="post" action="alternatif.php">
 					<input type="hidden" name="id" value="<?php echo $row['id_alt'] ?>">
@@ -103,11 +103,11 @@
 	</table>
 	<br>
 
-	<form action="bobot_kriteria.php">
+	<!-- <form action="bobot_kriteria.php">
 		<button class="btn btn-outline-info" style="float: right;">
 			Lanjut <i class="fa fa-angle-right"></i>
 		</button>
-	</form>
+	</form> -->
 </section>
 
 <?php include('footer.php'); ?>

@@ -36,10 +36,14 @@
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
                 <li class="nav-item nav-link"><a class="text-light" href="index.php">Home <span class="sr-only">(current)</span></a>
-                <?php if (isset($_SESSION['login'])){ ?>
+                <?php if (@$_SESSION['login']){
+					 ?>
 					<li class="nav-item nav-link"><a class="text-light" href="kriteria.php">Kriteria</a></li>
 					<li class="nav-item nav-link"><a class="text-light" href="alternatif.php">Alternatif</a></li>
+					<?php if($_SESSION['data']['role']==2 ):   ?>
 					<li class="nav-item nav-link"><a class="text-light" href="bobot_kriteria.php">Perbandingan Kriteria</a></li>
+					<?php endif; ?>
+					<?php if($_SESSION['data']['role']==3 ):   ?>
 					<li class="nav-item nav-link dropdown"><a class="text-light" href="#">Perbandingan Alternatif</a>
 					<ul class="isi-dropdown">
 					<?php
@@ -53,6 +57,7 @@
 							?>dropdown-menu dropdown-menu-right 
 					</ul>
 					</li>
+					<?php endif; ?>
 					<li class="nav-item nav-link dropdown"><a class="text-light" href="#">Matriks Perbandingan</a>
 					<ul class="isi-dropdown">
 							<a class='collapse-item' href='bobot_kriteria.php?submit=true'><br>Kriteria</a>

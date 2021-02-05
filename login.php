@@ -9,6 +9,10 @@
     }
   }
 
+  //admin 1
+  //kajur 2
+  //juri 3
+
   if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['username']) and isset($_POST['password'])){
       return login();
   }
@@ -134,3 +138,5 @@ span.psw {
 </body>
 
 </html>
+
+
